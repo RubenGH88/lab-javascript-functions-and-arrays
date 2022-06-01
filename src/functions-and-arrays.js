@@ -148,21 +148,16 @@ const matrix = [
 ];
 
 function greatestProduct(matrix) {
-  let max = 0,result;
-  for (let i = 0; 20; i++);{
-    for (let j = 0; 20; j++){
-      if ((j - 3) >= 0){result = arr[i][j] * arr[i][j - 1] * arr[i][j - 2] * arr[i][j - 3];
-        if (max < result) {max = result}}
-      if ((i - 3) >= 0) {
-        result = arr[i][j] * arr[i - 1][j] * arr[i - 2][j] * arr[i - 3][j];
-        if (max < result) {max = result};}
-    }
-  }
+  let max = 0, result;
+matrix.forEach(fila => {fila.forEach(number => {
+  if(matrix.indexOf(fila)>=3) {result = matrix[fila.indexOf(number)][matrix.indexOf(fila)]*matrix[fila.indexOf(number)][matrix.indexOf(fila)-1]*matrix[fila.indexOf(number)][matrix.indexOf(fila)-2]*matrix[fila.indexOf(number)][matrix.indexOf(fila)-3];  if(result>max){max = result}}
+  if(matrix.indexOf(number)>=3) {result = matrix[fila.indexOf(number)][matrix.indexOf(fila)]*matrix[fila.indexOf(number)-1][matrix.indexOf(fila)]*matrix[fila.indexOf(number)-2][matrix.indexOf(fila)]*matrix[fila.indexOf(number)-3][matrix.indexOf(fila)];   if(result>max){max = result}}
+});
+  
+});
+  
 return max
 }
-
-
-
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
